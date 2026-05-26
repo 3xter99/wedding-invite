@@ -1,0 +1,13 @@
+:root {
+  --color-bg: #ffffff;
+  --color-dark: #1a1a1a;
+  --color-text: #000000;
+  --color-muted: #666666;
+  --color-border: #000000;
+
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+
+  --section-pad: clamp(3rem, 8vw, 5rem);
+  --content-width: min(640px, 100% - 2rem);
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d3530"/>
+      <stop offset="40%" style="stop-color:#6b5a4e"/>
+      <stop offset="100%" style="stop-color:#c9a87c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#f5ebe0;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#f5ebe0;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <text x="960" y="500" text-anchor="middle" fill="#f5ebe0" font-family="Georgia, serif" font-size="72" opacity="0.9">;048<8@ &amp; !25B;0=0</text>
+  <text x="960" y="580" text-anchor="middle" fill="#e8d5c4" font-family="Georgia, serif" font-size="36" letter-spacing="8" opacity="0.8">18.07.2026</text>
+</svg>
