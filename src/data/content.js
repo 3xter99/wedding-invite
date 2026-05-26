@@ -65,7 +65,7 @@ export const wedding = {
   },
 
   music: {
-    src: 'https://www.salnikovadesign.space/Sam%20Smith%20-%20Fire%20On%20Fire_%5Bcut_75sec%5D.mp3',
+    src: '/audio/fire-on-fire.mp3',
     volume: 0.5,
   },
 };

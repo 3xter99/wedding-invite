@@ -28,9 +28,7 @@ export default function UnlockScreen({ unlocked, onUnlock }) {
 
 export function BackgroundMusic({ audioRef }) {
   return (
-    <audio ref={audioRef} loop preload="auto">
-      <source src={wedding.music.src} type="audio/mpeg" />
-    </audio>
+    <audio ref={audioRef} src={wedding.music.src} loop preload="auto" playsInline />
   );
 }
 

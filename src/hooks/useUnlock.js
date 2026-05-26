@@ -6,42 +6,42 @@ export function useUnlock() {
   const audioRef = useRef(null);
   const wasPlayingRef = useRef(true);
 
-  const unlock = useCallback(() => {
-    setUnlocked(true);
-  }, []);
-
-  useEffect(() => {
-    if (!unlocked) return;
-
+  const startMusic = useCallback(async () => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio) return false;
 
     audio.volume = wedding.music.volume;
-    audio.play()
-      .then(() => {
-        wasPlayingRef.current = true;
-      })
-      .catch(() => {
-        // Browser blocked autoplay — user can tap the music button later
-      });
-  }, [unlocked]);
+
+    if (audio.error) {
+      audio.load();
+    }
+
+    try {
+      await audio.play();
+      wasPlayingRef.current = true;
+      return true;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  const unlock = useCallback(() => {
+    // iOS/Safari требуют play() прямо в обработчике клика, не в useEffect
+    void startMusic();
+    setUnlocked(true);
+  }, [startMusic]);
 
   const toggleMusic = useCallback(async () => {
     const audio = audioRef.current;
     if (!audio) return;
 
     if (audio.paused) {
-      try {
-        await audio.play();
-        wasPlayingRef.current = true;
-      } catch {
-        // ignore
-      }
+      await startMusic();
     } else {
       audio.pause();
       wasPlayingRef.current = false;
     }
-  }, []);
+  }, [startMusic]);
 
   // Если вкладка свернута — ставим музыку на паузу
   useEffect(() => {
