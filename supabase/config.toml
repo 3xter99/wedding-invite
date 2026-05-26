@@ -1,0 +1,5 @@
+# Локальная конфигурация Supabase CLI (опционально).
+# Деплой: supabase functions deploy telegram-notify
+
+[functions.telegram-notify]
+verify_jwt = true

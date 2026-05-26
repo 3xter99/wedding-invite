@@ -1,0 +1,30 @@
+-- Уведомления в Telegram при новом RSVP
+-- ======================================
+--
+-- Шаг 1. Telegram-бот
+--   • @BotFather → /newbot → сохраните TELEGRAM_BOT_TOKEN
+--   • Напишите боту любое сообщение
+--   • Откройте: https://api.telegram.org/bot<TOKEN>/getUpdates
+--   • Скопируйте chat.id → это TELEGRAM_CHAT_ID
+--
+-- Шаг 2. Edge Function (Supabase CLI)
+--   npm i -g supabase
+--   supabase login
+--   supabase link --project-ref <ваш-project-ref>
+--   supabase secrets set TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=...
+--   supabase functions deploy telegram-notify
+--
+-- Шаг 3. Database Webhook (Dashboard)
+--   Database → Webhooks → Enable Webhooks → Create a new hook
+--     Name:     rsvp-telegram-notify
+--     Table:    public.rsvp_responses
+--     Events:   Insert
+--     Type:     Supabase Edge Functions
+--     Function: telegram-notify
+--     Method:   POST
+--     Timeout:  5000 ms
+--
+-- Шаг 4. Проверка
+--   Отправьте RSVP с сайта → сообщение должно прийти в Telegram.
+--
+-- Секреты храните только в Supabase Secrets, не во фронтенде (.env с VITE_*).
