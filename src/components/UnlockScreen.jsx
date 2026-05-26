@@ -26,19 +26,22 @@ export default function UnlockScreen({ unlocked, onUnlock }) {
   );
 }
 
-export function MusicToggle({ audioRef, onToggle }) {
+export function BackgroundMusic({ audioRef }) {
   return (
-    <>
-      <audio ref={audioRef} loop preload="auto">
-        <source src={wedding.music.src} type="audio/mpeg" />
-      </audio>
-      <button type="button" className="music-btn" onClick={onToggle} aria-label="Музыка">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M9 18V6l12-2v14" stroke="currentColor" strokeWidth="1" />
-          <circle cx="6" cy="18" r="2.5" stroke="currentColor" strokeWidth="1" />
-          <circle cx="18" cy="16" r="2.5" stroke="currentColor" strokeWidth="1" />
-        </svg>
-      </button>
-    </>
+    <audio ref={audioRef} loop preload="auto">
+      <source src={wedding.music.src} type="audio/mpeg" />
+    </audio>
+  );
+}
+
+export function MusicToggle({ onToggle }) {
+  return (
+    <button type="button" className="music-btn" onClick={onToggle} aria-label="Музыка">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 18V6l12-2v14" stroke="currentColor" strokeWidth="1" />
+        <circle cx="6" cy="18" r="2.5" stroke="currentColor" strokeWidth="1" />
+        <circle cx="18" cy="16" r="2.5" stroke="currentColor" strokeWidth="1" />
+      </svg>
+    </button>
   );
 }

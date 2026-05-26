@@ -1,4 +1,4 @@
-import UnlockScreen, { MusicToggle } from './components/UnlockScreen';
+import UnlockScreen, { BackgroundMusic, MusicToggle } from './components/UnlockScreen';
 import Hero from './components/Hero';
 import Welcome from './components/Welcome';
 import Schedule from './components/Schedule';
@@ -15,10 +15,11 @@ export default function App() {
 
   return (
     <>
+      <BackgroundMusic audioRef={audioRef} />
       <UnlockScreen unlocked={unlocked} onUnlock={unlock} />
 
       <div className={`app ${unlocked ? 'app--visible' : ''}`}>
-        {unlocked && <MusicToggle audioRef={audioRef} onToggle={toggleMusic} />}
+        {unlocked && <MusicToggle onToggle={toggleMusic} />}
 
         <main>
           <Hero />

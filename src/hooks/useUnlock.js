@@ -4,22 +4,27 @@ import { wedding } from '../data/content';
 export function useUnlock() {
   const [unlocked, setUnlocked] = useState(false);
   const audioRef = useRef(null);
-  const wasPlayingRef = useRef(false);
+  const wasPlayingRef = useRef(true);
 
-  const unlock = useCallback(async () => {
+  const unlock = useCallback(() => {
     setUnlocked(true);
+  }, []);
+
+  useEffect(() => {
+    if (!unlocked) return;
 
     const audio = audioRef.current;
     if (!audio) return;
 
-    try {
-      audio.volume = wedding.music.volume;
-      await audio.play();
-      wasPlayingRef.current = true;
-    } catch {
-      // Browser blocked autoplay — user can tap the music button later
-    }
-  }, []);
+    audio.volume = wedding.music.volume;
+    audio.play()
+      .then(() => {
+        wasPlayingRef.current = true;
+      })
+      .catch(() => {
+        // Browser blocked autoplay — user can tap the music button later
+      });
+  }, [unlocked]);
 
   const toggleMusic = useCallback(async () => {
     const audio = audioRef.current;
