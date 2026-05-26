@@ -5,7 +5,7 @@ export const wedding = {
   brideInitial: 'С',
   date: '18 июля 2026',
   dateShort: '18.07.2026',
-  dateISO: '2026-07-18T15:20:00',
+  dateISO: '2026-07-18T16:00:00',
 
   welcome: {
     heading: 'Дорогие гости!',
@@ -20,19 +20,19 @@ export const wedding = {
 
   schedule: [
     {
-      time: '15:20',
+      time: '16:00',
       title: 'Регистрация',
       text: 'Приготовьте платочки для трогательного момента',
     },
     {
-      time: '17:00',
+      time: '18:00',
       title: 'Банкет',
-      text: 'Время вкусной еды, танцев и развлечений',
+      text: 'Время вкусной еды в кругу самых близких',
     },
     {
-      time: '00:00',
+      time: '21:00',
       title: 'Завершение',
-      text: 'Мы очень благодарны, что Вы провели с нами этот чудесный день!',
+      text: 'Мы очень благодарны, что Вы провели с нами этот чудесный момент нашей жизни!',
     },
   ],
 
@@ -60,8 +60,8 @@ export const wedding = {
     phoneRaw: '+79152569272',
     phone2: '8 (925) 154-26-19',
     phone2Raw: '+79251542619',
-    whatsappUrl: 'https://wa.me/79152569272',
-    whatsappUrl2: 'https://wa.me/79251542619',
+    whatsappUrl: 'https://t.me/trixter999',
+    whatsappUrl2: 'https://t.me/@Svetlana_Korotkix',
   },
 
   music: {
@@ -73,7 +73,6 @@ export const wedding = {
 export const rsvpOptions = {
   attendance: [
     'Я с удовольствием приду',
-    'Буду со своей парой',
     'К сожалению, не смогу присутствовать',
     'Сообщу позже',
   ],

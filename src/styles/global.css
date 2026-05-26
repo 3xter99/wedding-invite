@@ -10,11 +10,12 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 120.25%;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-bg);
@@ -827,8 +828,8 @@ fieldset {
 
 .calendar__heart {
   position: absolute;
-  inset: -4px;
-  top: -7px;
+  inset: -3px;
+  top: -6px;
   width: calc(100% + 8px);
   height: calc(100% + 8px);
   color: var(--color-text);

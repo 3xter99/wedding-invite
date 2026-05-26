@@ -19,7 +19,7 @@ export function SectionDivider({ heartPosition = 'center' }) {
   );
 }
 
-export function WhatsAppIcon() {
+export function TelegramIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1" />

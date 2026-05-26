@@ -1,6 +1,6 @@
 import { wedding } from '../data/content';
 import { Animate } from './Animate';
-import { WhatsAppIcon } from './Icons';
+import { TelegramIcon } from './Icons';
 
 export default function Contacts() {
   return (
@@ -20,9 +20,9 @@ export default function Contacts() {
             href={wedding.contacts.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp жениха"
+            aria-label="Телеграм жениха"
           >
-            <WhatsAppIcon />
+            <TelegramIcon />
           </a>
         </Animate>
 
@@ -33,12 +33,12 @@ export default function Contacts() {
           </p>
           <a
             className="contacts__wa"
-            href={wedding.contacts.whatsappUrl}
+            href={wedding.contacts.whatsappUrl2}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp невесты"
+            aria-label="Телеграм невесты"
           >
-            <WhatsAppIcon />
+            <TelegramIcon />
           </a>
         </Animate>
       </div>
